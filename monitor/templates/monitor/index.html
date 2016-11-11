@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Docker Tutorial Demo</title>
+</head>
+<body>
+<h1>Hello World!</h1>
+<h1>SessionID: {{ session }}</h1>
+<h1>Host: {{ host_name }}</h1>
+<h1>IP: {{ host_ip }}</h1>
+{% if user_log_list %}
+    <ul>
+    {% for log in user_log_list %}
+        <li>{{ log.session_id }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No user logs.</p>
+{% endif %}
+</body>
+</html>
