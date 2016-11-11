@@ -1,0 +1,16 @@
+#!/bin/bash
+if [ -d /code ]; then
+    cd /code
+else
+    mkdir /code
+    echo "making /code"
+    cd /code
+fi
+
+if [ -d SystemMonitor ]; then
+  rm -rf SystemMonitor
+  echo "removing project directory-------"
+fi
+git clone https://github.com/RocyLuo/SystemMonitor.git
+cd SystemMonitor
+python manage.py runserver 0.0.0.0:8080
